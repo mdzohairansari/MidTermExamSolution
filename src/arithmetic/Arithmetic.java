@@ -23,13 +23,17 @@ public class Arithmetic
      */
     public static void main(String[] args) 
     {
-       
-        ArithmeticBase r= new ArithmeticBase();
-        Scanner in= new Scanner(System.in);
-        int n= in.nextInt();
-        int m= in.nextInt();
-        double result = r.calculate(m,n);
-        System.out.println("result :" +result); 
+      
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter first number: ");
+        double x = in.nextDouble();
+        System.out.println("Enter second number: ");
+        double y = in.nextDouble();
+        System.out.println("Enter arithmetic operation to perform (PLUS, MINUS, TIMES, DIVIDE): ");
+        String s = in.next();
+        ArithmeticBase r = new ArithmeticBase();
+        double result = r.calculate(x, y, s);
+        System.out.println("Result: " + result);
     
     }
 }
