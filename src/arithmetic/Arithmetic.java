@@ -6,6 +6,7 @@
 package arithmetic;
 
 
+import arithmetic.ArithmeticBase.Operation;
 import java.util.Scanner;
 import static java.time.Clock.system;
 
@@ -25,14 +26,14 @@ public class Arithmetic
     {
       
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter first number: ");
-        double x = in.nextDouble();
-        System.out.println("Enter second number: ");
-        double y = in.nextDouble();
-        System.out.println("Enter arithmetic operation to perform (PLUS, MINUS, TIMES, DIVIDE): ");
-        String s = in.next();
+        System.out.print("Enter first number: ");
+        double n = in.nextDouble();
+        System.out.print("Enter second number: ");
+        double m = in.nextDouble();
+        System.out.print("Enter arithmetic operation to perform (PLUS, MINUS, TIMES, DIVIDE): ");
+        Operation op = Operation.valueOf(in.next().toUpperCase());
         ArithmeticBase r = new ArithmeticBase();
-        double result = r.calculate(x, y, s);
+        double result = r.calculate(n, m, op);
         System.out.println("Result: " + result);
     
     }

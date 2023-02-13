@@ -19,9 +19,8 @@ public class ArithmeticBase
      
    public enum Operation {PLUS, MINUS, TIMES, DIVIDE};
 
-    public double calculate(double x, double y, String s) {
-        Operation operation = Operation.valueOf(s.toUpperCase());
-        switch (operation) {
+    public double calculate(double x, double y, Operation op) {
+        switch (op) {
             case PLUS:
                 return x + y;
             case MINUS:
@@ -31,7 +30,7 @@ public class ArithmeticBase
             case DIVIDE:
                 return x / y;
             default:
-                throw new AssertionError("Unknown operation: " + operation);
+                throw new AssertionError("Unknown operation " + op);
         }
     }
 }
